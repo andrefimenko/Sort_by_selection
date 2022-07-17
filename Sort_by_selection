@@ -1,0 +1,6 @@
+def sortBySelection(array: ArrayBuffer[Int] = ArrayBuffer[Int](), newArray: ArrayBuffer[Int] = ArrayBuffer[Int]()): ArrayBuffer[Int] = {
+  def rec(newA: ArrayBuffer[Int], oldA: ArrayBuffer[Int]): ArrayBuffer[Int] =
+    if (array.length == 0) newA
+    else rec(newA += oldA.min, oldA -= oldA.min)
+  rec(newArray, array)
+}
